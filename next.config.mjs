@@ -27,6 +27,7 @@ const nextConfig = {
     parallelServerBuildTraces: true,
     parallelServerCompiles: true,
   },
+  output: "export",
 }
 
 if (userConfig) {
@@ -48,4 +49,6 @@ if (userConfig) {
   }
 }
 
-export default nextConfig
+
+
+export default nextConfig;
