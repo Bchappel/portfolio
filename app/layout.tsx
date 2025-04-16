@@ -3,7 +3,7 @@ import "@/app/globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 
 export const metadata = {
-  title: "Your Name - Portfolio",
+  title: "Braedan Chappel",
   description: "Personal portfolio showcasing projects, resume, and more",
     generator: 'v0.dev'
 }
@@ -22,6 +22,7 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap"
         />
       </head>
+      <link rel="icon" href="/BC.png" type="image/x-icon"></link>
       <body className="min-h-screen font-sf-pro antialiased">
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
           {children}

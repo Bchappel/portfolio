@@ -21,7 +21,7 @@ export default function HomePage() {
               Hello, I'm <span className="text-stone-700">Braedan Chappel</span>
             </h1>
             <p className="text-xl md:text-2xl text-stone-600 mb-8 max-w-2xl">
-              I'm a developer focused on creating clean, user-friendly experiences that solve real problems.
+              I'm a software developer focused on creating clean, and relaible software solutions that solve real problems.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button asChild size="lg" className="bg-stone-800 hover:bg-stone-900">
