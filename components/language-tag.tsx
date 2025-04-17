@@ -43,12 +43,12 @@ export function LanguageTag({ language }: LanguageTagProps) {
 
     // Python ecosystem
     if (normalizedLang === "python" || normalizedLang.includes("django") || normalizedLang.includes("flask")) {
-      return "bg-green-100 text-green-800 border-green-200"
+      return "bg-yellow-100 text-yellow-800 border-yellow-400"
     }
 
     // Java ecosystem
     if (normalizedLang === "java" || normalizedLang.includes("spring")) {
-      return "bg-orange-100 text-orange-800 border-orange-200"
+      return "bg-red-100 text-red-800 border-red-200"
     }
 
     // C family
@@ -62,7 +62,7 @@ export function LanguageTag({ language }: LanguageTagProps) {
 
     // Web technologies
     if (normalizedLang === "html") {
-      return "bg-red-100 text-red-800 border-red-200"
+      return "bg-orange-100 text-orange-800 border-orange-200"
     }
 
     if (normalizedLang === "css" || normalizedLang === "sass" || normalizedLang === "scss") {
@@ -93,6 +93,18 @@ export function LanguageTag({ language }: LanguageTagProps) {
 
     if (normalizedLang === "rust") {
       return "bg-amber-100 text-amber-800 border-amber-200"
+    }
+
+    if (normalizedLang === "opengl") {
+      return "bg-green-100 text-green-800 border-green-200"
+    }
+
+    if (normalizedLang === "gradle") {
+      return "bg-blue-100 text-blue-800 border-blue-200"
+    }
+
+    if (normalizedLang === "unity") {
+      return "bg-white-100 text-white-800 border-white-200"
     }
 
     if (normalizedLang === "ruby") {

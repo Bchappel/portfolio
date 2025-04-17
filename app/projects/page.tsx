@@ -32,7 +32,7 @@ export default function ProjectsPage() {
           </div>
         </div>
       </main>
-      <Footer />
+      <Footer/>
     </div>
   )
 }

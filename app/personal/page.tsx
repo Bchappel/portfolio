@@ -10,12 +10,12 @@ export default function PersonalPage() {
       id: "guitar-1",
       name: "LTD EXP 200",
       description: "1 of approximately 300 made in 1997 Japan, this is a rare Explorer-style electric guitar with EMG pickups, famously associated with Metallica's James Hetfield",
-      imageUrl: "/placeholder.svg?height=400&width=600",
+      imageUrl: "EXP200.png",
       specs: {
         year: "1997",
         body: "Mahogany",
         neck: "Maple",
-        fretboard: "Maple",
+        fretboard: "22 Fret Rosewood",
         pickups: "EMG 81s",
       },
     },
@@ -23,12 +23,12 @@ export default function PersonalPage() {
       id: "guitar-2",
       name: "Schecter Omen Extreme-6 FR",
       description: "A stylish and versatile electric guitar featuring a mahogany body with a quilted maple top, a bolt-on maple neck, a Floyd Rose Special bridge for dynamic tremolo effects.",
-      imageUrl: "/placeholder.svg?height=400&width=600",
+      imageUrl: "Schecter6.png",
       specs: {
         year: "2019",
         body: "Mahogany with Quilted Maple Top",
         neck: "Maple",
-        fretboard: "Rosewood",
+        fretboard: "24 Fret Rosewood",
         pickups: "Schecter Diamond Plus",
       },
     },
@@ -36,12 +36,12 @@ export default function PersonalPage() {
       id: "guitar-3",
       name: "Shechter Omen Extreme 7 String",
       description: "The Schecter Omen Extreme-7 features a mahogany body with a quilted maple top, 24 frets. Offering powerful tone and extended range for modern metal and rock.",
-      imageUrl: "/placeholder.svg?height=400&width=600",
+      imageUrl: "Schecter7.png",
       specs: {
         year: "2013",
         body: "Mahogany with Quilted Maple Top",
         neck: "Maple",
-        fretboard: "Rosewood",
+        fretboard: "24 Fret Rosewood",
         pickups: "Schecter Diamond Plus",
       },
     },
@@ -122,7 +122,7 @@ export default function PersonalPage() {
               <TabsList className="mb-8">
                 <TabsTrigger value="guitars">My Guitars</TabsTrigger>
                 <TabsTrigger value="albums">Favorite Albums</TabsTrigger>
-                <TabsTrigger value="hobbies">Other Hobbies</TabsTrigger>
+                {/* <TabsTrigger value="hobbies">Other Hobbies</TabsTrigger> */}
               </TabsList>
 
               <TabsContent value="guitars">
@@ -225,21 +225,25 @@ export default function PersonalPage() {
                 </div>
               </TabsContent>
 
-              <TabsContent value="hobbies">
+              {/* <TabsContent value="hobbies">
                 <div className="grid md:grid-cols-2 gap-8">
                   <Card>
                     <CardContent className="p-6">
-                      <h3 className="text-xl font-medium mb-2">Photography</h3>
+                      <h3 className="text-xl font-medium mb-2">Cars</h3>
                       <p className="text-stone-600">
-                        I enjoy landscape and street photography. I shoot with a Sony Alpha series camera and love
-                        editing in Lightroom.
+                        For as long as I can remember, I've been interested in cars and racing. There's something about the perfect blend of complex engineering, efficiency and speed. 
+                        In my spare time, I enjoy working on some of my cars. My passion lies particularly in diesel engines, and I'm especially interested in powerplants like the Audi 3.0 TDI 
+                        and the BMW M57. These engines are engineering marvels, delivering impressive torque and efficiency while offering plenty of potential for tuning and performance enhancements.
+                        Beyond working on cars, I'm an avid motorsports fan. Formula 1 captivates me with its relentless pursuit of technological innovation, where milliseconds separate champions from contenders. 
+                        Meanwhile, the World Rally Championship (WRC) feeds my love for raw, unpredictable racing—where drivers push their limits on unforgiving terrain, demonstrating incredible skill. 
+                        Whether it's the precision of F1 or the chaos of WRC, I find myself constantly drawn to the high octane energy and the relentless spirit of competition.
                       </p>
                     </CardContent>
                   </Card>
 
                   <Card>
                     <CardContent className="p-6">
-                      <h3 className="text-xl font-medium mb-2">Hiking</h3>
+                      <h3 className="text-xl font-medium mb-2">Guitar</h3>
                       <p className="text-stone-600">
                         Exploring trails and mountains whenever I get the chance. My goal is to hike in every national
                         park.
@@ -249,7 +253,7 @@ export default function PersonalPage() {
 
                   <Card>
                     <CardContent className="p-6">
-                      <h3 className="text-xl font-medium mb-2">Cooking</h3>
+                      <h3 className="text-xl font-medium mb-2">Traveling</h3>
                       <p className="text-stone-600">
                         I love experimenting with different cuisines and techniques. Italian and Japanese food are my
                         specialties.
@@ -259,7 +263,7 @@ export default function PersonalPage() {
 
                   <Card>
                     <CardContent className="p-6">
-                      <h3 className="text-xl font-medium mb-2">Reading</h3>
+                      <h3 className="text-xl font-medium mb-2">Mountain Biking</h3>
                       <p className="text-stone-600">
                         Science fiction and philosophy books are my favorites. I try to read at least one book per
                         month.
@@ -267,12 +271,12 @@ export default function PersonalPage() {
                     </CardContent>
                   </Card>
                 </div>
-              </TabsContent>
+              </TabsContent> */}
             </Tabs>
           </div>
         </section>
       </main>
-      <Footer />
+      <Footer/>
     </div>
   )
 }

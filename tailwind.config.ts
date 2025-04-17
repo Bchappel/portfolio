@@ -31,6 +31,9 @@ const config = {
         ],
         jetbrains: ['"JetBrains Mono"', "monospace"],
       },
+      fontFeatureSettings: {
+        'no-ligatures': '"liga" off',
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

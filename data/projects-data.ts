@@ -17,59 +17,55 @@ export interface ProjectData {
 export const featuredProjects: ProjectData[] = [
   {
     id: "project-one",
-    title: "Project One",
-    description: "A brief description of this project and the technologies used.",
-    tags: ["React", "TypeScript", "Tailwind"],
-    codeSnippet: `function DataVisualizer({ data }) {
-  const [filteredData, setFilteredData] = useState(data);
-  
-  useEffect(() => {
-    // Process and transform data for visualization
-    const processedData = data.map(item => ({
-      ...item,
-      value: calculateMetric(item.rawValue)
-    }));
-    setFilteredData(processedData);
-  }, [data]);
+    title: "8-Ball",
+    description: "A browser based 8-ball game using C interfaced with Python.",
+    tags: ["C", "Python", "HTML"],
+    codeSnippet: 
+`#include "phylib.h"
 
-  return (
-    <div className="visualization-container">
-      <ControlPanel onFilter={handleFilterChange} />
-      <BarChart data={filteredData} />
-    </div>
-  );
-}`,
-    language: "jsx",
+phylib_object * phylib_new_still_ball(unsigned char number, phylib_coord * pos){
+    phylib_object * new_ball = (phylib_object *)malloc(sizeof(phylib_object));
+    
+    if(new_ball == NULL){
+      return NULL;
+    }
+    new_ball->type = PHYLIB_STILL_BALL;
+    new_ball->obj.still_ball.number = number;
+    new_ball->obj.still_ball.pos = *pos; 
+
+    return new_ball;
+
+}
+`,
+    language: "cpp",
     link: "/projects/project-one",
   },
   {
     id: "project-two",
-    title: "Project Two",
-    description: "A brief description of this project and the technologies used.",
-    tags: ["Next.js", "Node.js", "MongoDB"],
-    codeSnippet: `// Product inventory management system
-import { connectToDatabase } from '../lib/mongodb';
+    title: "To Do List",
+    description: "Command line based To Do list application using Java.",
+    tags: ["Java", "Gradle"],
+    codeSnippet: 
+`public TextUI() {
+    input = new Scanner(System.in);
 
-export async function getInventoryLevels() {
-  const { db } = await connectToDatabase();
-  
-  const products = await db
-    .collection('products')
-    .aggregate([
-      { $match: { active: true } },
-      { $lookup: {
-          from: 'inventory',
-          localField: '_id',
-          foreignField: 'productId',
-          as: 'stock'
-        }
-      }
-    ])
-    .toArray();
-    
-  return products;
+    mainMenu = new Menu("Main Menu");
+
+    try {
+        mainMenu.addOption("View list");
+        mainMenu.addOption("Add item to list");
+        mainMenu.addOption("Complete item in list");
+        mainMenu.addOption("Delete item in list");
+        mainMenu.addOption("Save list");
+        mainMenu.addOption("Load list");
+        mainMenu.addOption("Exit");
+    } catch (Exception err) {
+        System.out.println(err.getMessage());
+    }
+
+    list = new TodoList("Coursework Todo List");
 }`,
-    language: "javascript",
+    language: "java",
     link: "/projects/project-two",
   },
 ]
@@ -79,45 +75,34 @@ export const allProjects: ProjectData[] = [
   ...featuredProjects,
   {
     id: "project-three",
-    title: "Project Three",
-    description:
-      "A mobile-first progressive web app that works offline and synchronizes data when connection is restored.",
-    tags: ["Vue.js", "Firebase", "PWA"],
-    codeSnippet: `// Service worker registration for offline functionality
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/sw.js').then(registration => {
-      console.log('ServiceWorker registration successful');
-    }).catch(error => {
-      console.error('ServiceWorker registration failed:', error);
-    });
-  });
-}
+    title: "Unity Pong Game",
+    description: "A multiplayer Pong game with an AI opponent developed using Unity.",
+    tags: ["Unity", "C#"],
+    codeSnippet: 
+`using UnityEngine;
 
-// Data synchronization when coming back online
-window.addEventListener('online', async () => {
-  const pendingActions = await db.pendingActions.toArray();
-  
-  for (const action of pendingActions) {
-    try {
-      await syncAction(action);
-      await db.pendingActions.delete(action.id);
-    } catch (error) {
-      console.error('Failed to sync action:', error);
+public class BounceMultiplier : MonoBehaviour{
+    public float bounceVel;
+    private void OnCollisionEnter2D(Collision2D collision){
+        Ball ball = collision.gameObject.GetComponent<Ball>();
+
+        if (ball != null){
+            Vector2 normal = collision.GetContact(0).normal;
+            ball.AddForce(-normal * this.bounceVel);  
+        }
     }
-  }
-  
-  showNotification('All changes synced successfully');
-});`,
-    language: "javascript",
-    link: "/projects/project-three",
+}
+`,
+    language: "csharp",
+    link: "https://github.com/Bchappel/Pong-Game",
   },
   {
     id: "project-four",
     title: "Project Four",
     description: "An API service that processes and analyzes large datasets using machine learning algorithms.",
     tags: ["Python", "FastAPI", "TensorFlow"],
-    codeSnippet: `from fastapi import FastAPI, File, UploadFile
+    codeSnippet: 
+`from fastapi import FastAPI, File, UploadFile
 from tensorflow.keras.models import load_model
 import numpy as np
 import pandas as pd
@@ -278,7 +263,7 @@ export function getLanguageColorClass(language: string): string {
 
   // Python ecosystem
   if (lang === "python" || lang.includes("django") || lang.includes("flask")) {
-    return "bg-green-100 text-green-800 border-green-200"
+    return "bg-yellow-100 text-yellow-800 border-yellow-200"
   }
 
   // Java ecosystem
@@ -340,6 +325,10 @@ export function getLanguageColorClass(language: string): string {
 
   // Tools & Others
   if (lang.includes("docker") || lang.includes("kubernetes")) {
+    return "bg-blue-100 text-blue-800 border-blue-200"
+  }
+
+  if (lang === "gradle") {
     return "bg-blue-100 text-blue-800 border-blue-200"
   }
 

@@ -12,6 +12,12 @@ body {
   }
 }
 
+.disable-ligatures {
+  font-feature-settings: "liga" 0;
+  font-variant-ligatures: none;
+}
+
+
 @layer base {
   :root {
     --background: 0 0% 100%;
