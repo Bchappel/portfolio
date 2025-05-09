@@ -1,3 +1,4 @@
+@import url("https://unpkg.com/leaflet@1.9.4/dist/leaflet.css");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -47,6 +48,13 @@
     --input: 12 6.5% 15.1%;
     --ring: 24 5.7% 82.9%;
   }
+}
+
+.leaflet-tile {
+  filter: grayscale(1);
+}
+.leaflet-container {
+  background-color: #262626 !important; /* or bg-stone-800's hex */
 }
 
 @layer base {

@@ -28,7 +28,7 @@ export default function WelcomePage() {
         }`}
       >
         <h1 className="text-5xl md:text-7xl font-bold tracking-tighter mb-6 text-stone-800">Braedan Chappel</h1>
-        <p className="text-xl md:text-2xl text-stone-600 mb-12 max-w-md mx-auto">Software Engineer</p>
+        <p className="text-xl md:text-2xl text-stone-600 mb-12 max-w-md mx-auto">Software Engineer.</p>
         <div className="relative inline-block">
           <Button
             asChild
