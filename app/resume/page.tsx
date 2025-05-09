@@ -46,7 +46,7 @@ export default function ResumePage() {
                 <div>
                   <div className="mb-1">
                     <h3 className="font-medium text-lg">Software Engineering Intern</h3>
-                    <span className="text-stone-500 block">September 2024 - Present</span>
+                    <span className="text-stone-500 block">April 2023 - September 2023</span>
                   </div>
                   <div className="text-stone-600 mb-2">NovaTox Inc.</div>
                   <ul className="space-y-2 text-stone-600">
@@ -73,18 +73,18 @@ export default function ResumePage() {
               <h2 className="text-2xl font-semibold mb-4 text-stone-800">Education</h2>
               <div>
                 <div className="mb-1">
-                  <h3 className="font-medium text-lg">Bachelor of Computing in Software Engineering</h3>
+                  <h3 className="font-medium text-lg">Bachelor of Computing, Software Engineering</h3>
                   <span className="text-stone-500 block">2022 - Present</span>
                 </div>
                 <div className="text-stone-600">University of Guelph</div>
                 <ul className="mt-2 space-y-2 text-stone-600">
                   <li className="flex items-start">
                     <span className="inline-block w-1.5 h-1.5 rounded-full bg-stone-500 mt-[0.65em] mr-2 flex-shrink-0"></span>
-                    <span>Minoring in Project Management</span>
+                    <span>Minoring in Project Management.</span>
                   </li>
                   <li className="flex items-start">
                     <span className="inline-block w-1.5 h-1.5 rounded-full bg-stone-500 mt-[0.65em] mr-2 flex-shrink-0"></span>
-                    <span>Relevant coursework: Data Structures, Algorithms, Web Development, Mobile Development, Micro Computing</span>
+                    <span>Relevant coursework: Data Structures, Algorithms, Web Development, Mobile Development, Micro Computing.</span>
                   </li>
                   <li className="flex items-start">
                     <span className="inline-block w-1.5 h-1.5 rounded-full bg-stone-500 mt-[0.65em] mr-2 flex-shrink-0"></span>

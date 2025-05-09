@@ -9,7 +9,7 @@ export function Footer() {
 
         <div className="flex items-center gap-4">
           <Link
-            href="https://github.com"
+            href="https://github.com/Bchappel"
             target="_blank"
             rel="noopener noreferrer"
             className="text-stone-500 hover:text-stone-900"
@@ -18,7 +18,7 @@ export function Footer() {
             <span className="sr-only">GitHub</span>
           </Link>
           <Link
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/braedan-chappel-21380624b/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-stone-500 hover:text-stone-900"
@@ -26,7 +26,7 @@ export function Footer() {
             <Linkedin className="h-5 w-5" />
             <span className="sr-only">LinkedIn</span>
           </Link>
-          <Link
+          {/* <Link
             href="https://twitter.com"
             target="_blank"
             rel="noopener noreferrer"
@@ -34,8 +34,8 @@ export function Footer() {
           >
             <Twitter className="h-5 w-5" />
             <span className="sr-only">Twitter</span>
-          </Link>
-          <Link href="mailto:your.email@example.com" className="text-stone-500 hover:text-stone-900">
+          </Link> */}
+          <Link href="mailto:braedanchappel@gmail.com" className="text-stone-500 hover:text-stone-900">
             <Mail className="h-5 w-5" />
             <span className="sr-only">Email</span>
           </Link>

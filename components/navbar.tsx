@@ -41,7 +41,7 @@ export function Navbar() {
             </Link>
           ))}
           <Button asChild size="sm" className="bg-stone-800 hover:bg-stone-900">
-            <Link href="mailto:your.email@example.com">Contact</Link>
+            <Link href="mailto:braedanchappel@gmail.com">Contact</Link>
           </Button>
         </nav>
 
@@ -62,15 +62,12 @@ export function Navbar() {
                     "text-lg font-medium transition-colors hover:text-stone-900",
                     pathname === item.href ? "text-stone-900 font-semibold" : "text-stone-500",
                   )}
-                  onClick={() => setIsOpen(false)}
-                >
+                  onClick={() => setIsOpen(false)}>
                   {item.name}
                 </Link>
               ))}
               <Button asChild className="mt-4 bg-stone-800 hover:bg-stone-900">
-                <Link href="mailto:your.email@example.com" onClick={() => setIsOpen(false)}>
-                  Contact
-                </Link>
+                <Link href="mailto:braedanchappel@gmail.com" onClick={() => setIsOpen(false)}>Contact</Link>
               </Button>
             </nav>
           </SheetContent>

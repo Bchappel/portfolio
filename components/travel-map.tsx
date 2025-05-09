@@ -186,7 +186,7 @@ function ZoomAwareMarkers() {
   return (
     <>
       {visiblePins.map((loc, i) => (
-        <Marker key={i} position={[loc.lat, loc.lng]} icon={loc.label === "Guelph" ? homePinIcon : redPinIcon}>
+        <Marker key={i} position={[loc.lat, loc.lng]} icon={loc.label === "Guelph, Canada" ? homePinIcon : redPinIcon}>
           <Tooltip direction="bottom" offset={[0, 10]} opacity={0.9}>
             {loc.label}
           </Tooltip>
