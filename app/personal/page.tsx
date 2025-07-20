@@ -166,9 +166,9 @@ return (
 
           <Tabs defaultValue="guitars" className="mb-12">
             <TabsList className="mb-8">
-              <TabsTrigger value="guitars">Guitars</TabsTrigger>
-              <TabsTrigger value="artists">Bands</TabsTrigger>
               <TabsTrigger value="hobbies">Travel</TabsTrigger>
+			  <TabsTrigger value="guitars">Guitars</TabsTrigger>
+              <TabsTrigger value="artists">Albums</TabsTrigger>
             </TabsList>
 
             <TabsContent value="guitars">
@@ -218,13 +218,10 @@ return (
 
             <TabsContent value="artists">
               <div className="space-y-16">
-                <p className="text-lg text-stone-600 mb-8">Some of my favorite bands and their albums that have had the biggest impact on me. Each artist has inspired me in different ways.</p>
-
                 {favoriteArtists.map((artist, index) => (
                   <div key={artist.id}>
-                    <h2 className="text-3xl font-bold mb-4">{artist.name}</h2>
-                    <p className="text-stone-600 mb-8">{artist.bio}</p>
-
+                    <h2 className="text-3xl font-bold mb-8">{artist.name}</h2>
+                  
                     <AlbumCarousel albums={artist.albums} artistName={artist.name} />
 
                     {/* Add horizontal line between artists, but not after the last one */}
@@ -236,7 +233,7 @@ return (
 
 			<TabsContent value="hobbies">
 				<p className="text-lg text-stone-600 mb-8">
-					A visual look at the places I’ve traveled to. Hover over each pin to see the location!
+					A visual look at the places I’ve traveled to.
 				</p>
 				<TravelMap />
 			</TabsContent>
@@ -245,7 +242,7 @@ return (
         </div>
       </section>
     </main>
-    <Footer />
+    <Footer/>
   </div>
 )
 }

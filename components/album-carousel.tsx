@@ -57,7 +57,7 @@ export function AlbumCarousel({ albums, artistName }: AlbumCarouselProps) {
     <div className="w-full">
       <div className="flex flex-col md:flex-row gap-8">
         {/* Album Stack */}
-        <div className="w-full md:w-1/3 relative">
+        <div className="w-full md:w-1/3 relative px-3">
           <div className="aspect-square relative">
             {/* Create a stack of albums with just slivers visible */}
             <div className="relative w-full h-full">

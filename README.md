@@ -17,7 +17,7 @@ A minimalist portfolio website built with Next.js, Tailwind CSS, and shadcn/ui c
 
 ### Prerequisites
 
-- Node.js 18.17.0 or later
+- Node.js 18.18.0 or later
 - npm or yarn
 
 ### Setup
@@ -30,27 +30,19 @@ cd portfolio
 
 2. Install dependencies:
 \`\`\`bash
-npm install
+npm install --legacy-peer-deps
 # or
 yarn
 \`\`\`
 
 3. Run the development server:
 \`\`\`bash
-npm run dev
+npm run dev then 
 # or
 yarn dev
 \`\`\`
 
 4. Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
-
-## Customization
-
-- Update your personal information in the files
-- Replace placeholder images with your own
-- Add your actual projects with code snippets
-- Update your resume details
-- Add your guitar collection with specifications
 
 ## Customizing Code Snippets
 
