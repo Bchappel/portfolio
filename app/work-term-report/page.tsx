@@ -1,5 +1,6 @@
 "use client";
 
+import { Suspense } from "react";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import Image from "next/image";
@@ -131,7 +132,6 @@ function S25ReportContent() {
 }
 
 // Separate F25 report content
-// Separate F25 report content
 function F25ReportContent() {
 	return (
 		<>
@@ -260,7 +260,8 @@ function F25ReportContent() {
 	);
 }
 
-export default function WorkTermReportPage() {
+// Component that uses useSearchParams - must be wrapped in Suspense
+function WorkTermReportTabs() {
 	const searchParams = useSearchParams();
 	const router = useRouter();
 	const pathname = usePathname();
@@ -275,6 +276,25 @@ export default function WorkTermReportPage() {
 		router.push(`${pathname}?${params.toString()}`);
 	};
 
+	return (
+		<Tabs value={normalizedTab} onValueChange={handleTabChange} className="w-full">
+			<TabsList className="mb-6">
+				<TabsTrigger value="s25">S25</TabsTrigger>
+				<TabsTrigger value="f25">F25</TabsTrigger>
+			</TabsList>
+
+			<TabsContent value="s25">
+				<S25ReportContent />
+			</TabsContent>
+
+			<TabsContent value="f25">
+				<F25ReportContent />
+			</TabsContent>
+		</Tabs>
+	);
+}
+
+export default function WorkTermReportPage() {
 	return (
 		<div className="work-term-report min-h-screen bg-stone-50 flex flex-col">
 			<style jsx global>{`
@@ -310,21 +330,9 @@ export default function WorkTermReportPage() {
 
 			<main className="flex-1 py-10">
 				<div className="container mx-auto px-4">
-					{/* Tabs */}
-					<Tabs value={normalizedTab} onValueChange={handleTabChange} className="w-full">
-						<TabsList className="mb-6">
-							<TabsTrigger value="s25">S25</TabsTrigger>
-							<TabsTrigger value="f25">F25</TabsTrigger>
-						</TabsList>
-
-						<TabsContent value="s25">
-							<S25ReportContent />
-						</TabsContent>
-
-						<TabsContent value="f25">
-							<F25ReportContent />
-						</TabsContent>
-					</Tabs>
+					<Suspense fallback={<div className="text-center py-8">Loading...</div>}>
+						<WorkTermReportTabs />
+					</Suspense>
 				</div>
 			</main>
 
