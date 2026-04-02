@@ -4,11 +4,8 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { useRouter } from "next/navigation"
-
 export default function WelcomePage() {
   const [loaded, setLoaded] = useState(false)
-  const router = useRouter()
 
   useEffect(() => {
     setLoaded(true)

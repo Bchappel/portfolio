@@ -8,7 +8,7 @@ A minimalist portfolio website built with Next.js, Tailwind CSS, and shadcn/ui c
 - Home page with featured projects
 - Projects page with code snippets
 - Resume page with downloadable PDF option
-- Personal page with guitar collection and hobbies
+- Personal page with bio and travel map
 - Responsive design for all screen sizes
 - SF Pro Display font
 - Dark mode support
@@ -81,8 +81,8 @@ This portfolio can be easily deployed to Vercel:
 
 ## Technologies Used
 
-- Next.js 14
-- React 18
+- Next.js 15
+- React 19
 - Tailwind CSS
-- shadcn/ui components
+- shadcn/ui (button, card, sheet, tabs)
 - Lucide React icons

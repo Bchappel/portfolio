@@ -208,7 +208,6 @@ export function TravelMap() {
           maxZoom={15} // or higher
           scrollWheelZoom={true}
           zoomControl={false}
-          updateWhenIdle={true}
           attributionControl={false}
           worldCopyJump={false}
           maxBounds={[

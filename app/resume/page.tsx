@@ -1,7 +1,49 @@
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
-import { Button } from "@/components/ui/button"
-import { Download } from "lucide-react"
+import { LanguageTag } from "@/components/language-tag"
+import { sortSkillLabelsByColorFamily } from "@/lib/language-tag-styles"
+
+const programmingLanguages = [
+  "C/C++",
+  "C#",
+  "Python",
+  "PHP",
+  "Java",
+  "HTML",
+  "JavaScript",
+  "CSS",
+  "SQL",
+  "TypeScript",
+  "Visual Basic",
+  "R",
+  "Swift",
+] as const
+
+const frameworksAndTools = [
+  "GitHub",
+  "AWS",
+  "Vercel",
+  "BitBucket",
+  ".NET Core",
+  "Laravel MVC",
+  "WSL/Linux",
+  "Flutter",
+  "React",
+  "Next.js",
+  "Node.js",
+  "Unity",
+  "GNU CC",
+] as const
+
+const projectManagementSkills = [
+  "Agile",
+  "Scrum",
+  "CD/CI",
+  "SDLC",
+  "Data Analysis",
+  "Time Management",
+  "Risk Management",
+] as const
 
 export default function ResumePage() {
   return (
@@ -103,10 +145,8 @@ export default function ResumePage() {
               <div className="mb-6">
                 <h3 className="font-medium mb-2">Programming Languages</h3>
                 <div className="flex flex-wrap gap-2">
-                  {["C/C++", "C#", "Python", "PHP", "Java", "HTML", "JavaScript", "CSS", "SQL", "TypeScript", "Visual Basic", "R", "Swift"].map((skill) => (
-                    <span key={skill} className="px-3 py-1 bg-stone-100 text-stone-700 rounded-full text-sm">
-                      {skill}
-                    </span>
+                  {sortSkillLabelsByColorFamily(programmingLanguages).map((skill) => (
+                    <LanguageTag key={skill} language={skill} />
                   ))}
                 </div>
               </div>
@@ -118,20 +158,16 @@ export default function ResumePage() {
                 <div>
                   <h3 className="font-medium mb-2">Frameworks & Tools</h3>
                   <div className="flex flex-wrap gap-2">
-                    {["GitHub", "AWS", "Vercel", "BitBucket",".NET Core","Laravel MVC","WSL/Linux","Flutter","React", "Next.js", "Node.js", "Unity", "GNU CC"].map((skill) => (
-                      <span key={skill} className="px-3 py-1 bg-stone-100 text-stone-700 rounded-full text-sm">
-                        {skill}
-                      </span>
+                    {sortSkillLabelsByColorFamily(frameworksAndTools).map((skill) => (
+                      <LanguageTag key={skill} language={skill} />
                     ))}
                   </div>
                 </div>
                 <div>
                   <h3 className="font-medium mb-2">Project Management Skills</h3>
                   <div className="flex flex-wrap gap-2">
-                    {["Agile", "Scrum","CD/CI","SDLC","Data Analysis","Time Manangement","Risk Management"].map((skill) => (
-                      <span key={skill} className="px-3 py-1 bg-stone-100 text-stone-700 rounded-full text-sm">
-                        {skill}
-                      </span>
+                    {sortSkillLabelsByColorFamily(projectManagementSkills).map((skill) => (
+                      <LanguageTag key={skill} language={skill} />
                     ))}
                   </div>
                 </div>

@@ -21,8 +21,8 @@ export default function RootLayout({
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap"
         />
+        <link rel="icon" href="/BC.png" type="image/x-icon" />
       </head>
-      <link rel="icon" href="/BC.png" type="image/x-icon"></link>
       <body className="min-h-screen font-sf-pro antialiased">
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
           {children}
@@ -31,6 +31,3 @@ export default function RootLayout({
     </html>
   )
 }
-
-
-import './globals.css'
