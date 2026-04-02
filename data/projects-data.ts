@@ -3,6 +3,9 @@
 // This file contains all the project data including code snippets
 // You can easily replace these with your own projects and code
 
+/** Distinct code-panel look for project cards (projects page). */
+export type CodePanelTone = "github" | "sapphire" | "plum" | "forest" | "amber" | "slate"
+
 export interface ProjectData {
   id: string
   title: string
@@ -11,6 +14,8 @@ export interface ProjectData {
   codeSnippet: string
   language: string
   link: string
+  /** Optional; defaults to GitHub-style dark panel */
+  codeTone?: CodePanelTone
 }
 
 // Featured projects shown on the home page
@@ -38,7 +43,7 @@ phylib_object * phylib_new_still_ball(unsigned char number, phylib_coord * pos){
 }
 `,
     language: "cpp",
-    link: "/projects/project-one",
+    link: "https://github.com/Bchappel/8-Ball",
   },
   {
     id: "project-two",
@@ -66,7 +71,7 @@ phylib_object * phylib_new_still_ball(unsigned char number, phylib_coord * pos){
     list = new TodoList("Coursework Todo List");
 }`,
     language: "java",
-    link: "/projects/project-two",
+    link: "https://github.com/Bchappel/ToDo-List-Application",
   },
 ]
 
@@ -98,127 +103,178 @@ public class BounceMultiplier : MonoBehaviour{
   },
   {
     id: "project-four",
-    title: "Project Four",
-    description: "An API service that processes and analyzes large datasets using machine learning algorithms.",
-    tags: ["Python", "FastAPI", "TensorFlow"],
-    codeSnippet: 
-`from fastapi import FastAPI, File, UploadFile
-from tensorflow.keras.models import load_model
-import numpy as np
-import pandas as pd
+    title: "Health Dashboard",
+    description:
+      "iOS SwiftUI app for browsing health metrics: dashboard layout, history views, and reusable row components built with SwiftUI patterns.",
+    tags: ["Swift", "SwiftUI", "HealthKit", "Xcode"],
+    codeSnippet: `import SwiftUI
 
-app = FastAPI()
-model = load_model("models/prediction_model.h5")
+struct HealthRowView: View {
+    var title: String
+    var value: String
+    var color: Color
 
-@app.post("/api/predict")
-async def predict(file: UploadFile = File(...)):
-    # Read and process the uploaded dataset
-    contents = await file.read()
-    df = pd.read_csv(io.StringIO(contents.decode('utf-8')))
-    
-    # Preprocess data
-    processed_data = preprocess_dataset(df)
-    
-    # Make predictions
-    predictions = model.predict(processed_data)
-    
-    # Format results
-    results = format_predictions(predictions, df)
-    
-    return {
-        "status": "success",
-        "predictions": results,
-        "confidence_score": float(np.mean(predictions[:, 1]))
-    }`,
-    language: "python",
-    link: "/projects/project-four",
+    var body: some View {
+        HStack {
+            VStack(alignment: .leading, spacing: 4) {
+                Text(title)
+                    .font(.caption)
+                    .foregroundColor(.secondary)
+
+                Text(value)
+                    .font(.system(size: 26, weight: .bold))
+                    .foregroundColor(color)
+            }
+
+            Spacer()
+
+            Image(systemName: "chevron.right")
+                .foregroundColor(.gray)
+        }
+        .padding()
+        .frame(maxWidth: .infinity)
+        .background(Color(.systemGray6))
+        .cornerRadius(12)
+        .shadow(color: Color.black.opacity(0.05), radius: 2, x: 0, y: 1)
+    }
+}`,
+    language: "swift",
+    link: "https://github.com/Bchappel/HealthDashboard",
+    codeTone: "sapphire",
   },
   {
     id: "project-five",
-    title: "Project Five",
-    description: "A high-performance game engine with advanced physics simulation and rendering capabilities.",
-    tags: ["C++", "OpenGL", "DirectX"],
-    codeSnippet: `#include <iostream>
-#include <vector>
-#include <memory>
-#include "PhysicsEngine.h"
-#include "Renderer.h"
+    title: "Planner Web Application",
+    description:
+      "Next.js planner with protected routes, dashboard home, and modular UI for workouts and nutrition tracking.",
+    tags: ["Next.js", "TypeScript", "React", "Tailwind CSS"],
+    codeSnippet: `import HeroBanner from "@/components/ui/hero-banner"
+import NextWorkout from "@/components/home/next-workout"
+import TodaysNutrition from "@/components/home/todays-nutrition"
 
-class GameEngine {
-private:
-    std::unique_ptr<PhysicsEngine> physicsEngine;
-    std::unique_ptr<Renderer> renderer;
-    std::vector<GameObject*> gameObjects;
+export default function HomePage() {
+  return (
+    <div className="container mx-auto py-4 sm:py-8 px-4 sm:px-6">
+      <HeroBanner name="Braedan" />
 
-public:
-    GameEngine() {
-        physicsEngine = std::make_unique<PhysicsEngine>();
-        renderer = std::make_unique<Renderer>();
-        std::cout << "Game Engine initialized" << std::endl;
-    }
-
-    void update(float deltaTime) {
-        // Update physics for all game objects
-        physicsEngine->update(gameObjects, deltaTime);
-        
-        // Render the current frame
-        renderer->beginFrame();
-        for (auto& obj : gameObjects) {
-            renderer->drawObject(obj);
-        }
-        renderer->endFrame();
-    }
-};`,
-    language: "cpp",
-    link: "/projects/project-five",
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 mb-6">
+        <NextWorkout />
+        <TodaysNutrition />
+      </div>
+    </div>
+  )
+}`,
+    language: "tsx",
+    link: "https://github.com/Bchappel/Planner-Web-Application",
+    codeTone: "plum",
   },
   {
     id: "project-six",
-    title: "Project Six",
-    description: "A cross-platform mobile application for tracking fitness goals and workout routines.",
-    tags: ["Java", "Android", "SQLite"],
-    codeSnippet: `package com.example.fitnessapp;
+    title: "Point of Sale Application",
+    description:
+      "Desktop POS built with VB.NET WinForms: product catalog, running subtotals, tax, and receipt line items.",
+    tags: ["VB.NET", "WinForms", ".NET"],
+    codeSnippet: `Public Class Form1
 
-import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
+    Dim subtotal As Decimal = 0
+    Dim tax As Decimal = 0
+    Dim total As Decimal = 0
+    Dim HST As Decimal = 0.13
 
-import java.util.ArrayList;
-import java.util.List;
+    Dim Payment As Double = 0
+    Dim Change As Double = 0
 
-public class WorkoutActivity extends AppCompatActivity {
-    private RecyclerView recyclerView;
-    private WorkoutAdapter adapter;
-    private List<Workout> workoutList;
-    private DatabaseHelper dbHelper;
+    'GPUs
+    Dim GTX970 As Decimal = 199.99
+    Dim GTX980 As Decimal = 225.49
+    Dim RTX2080 As Decimal = 1105.27
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_workout);
-        
-        dbHelper = new DatabaseHelper(this);
-        workoutList = new ArrayList<>();
-        
-        // Initialize RecyclerView
-        recyclerView = findViewById(R.id.workout_recycler_view);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        
-        // Load workouts from database
-        loadWorkouts();
-        
-        // Set up adapter
-        adapter = new WorkoutAdapter(workoutList, this);
-        recyclerView.setAdapter(adapter);
+    'CPUs
+    Dim I59600K As Decimal = 395.99
+    Dim Ryzen7 As Decimal = 440.88
+
+    Private Sub btnGTX970_Click(sender As System.Object, e As System.EventArgs) Handles btnASUSGTX970.Click
+        subtotal = subtotal + GTX970
+        tbSubtotal.Text = "$" & subtotal
+
+        tax = subtotal * HST
+        tax = Math.Round(tax, 2)
+        tbTax.Text = "$" & tax
+
+        total = subtotal + tax
+        tbTotal.Text = "$" & total
+
+        lbReceipt.Items.Add("ASUS GTX970 - $" & GTX970)
+        btnCheckout.Visible = True
+    End Sub`,
+    language: "vbnet",
+    link: "https://github.com/Bchappel/Point-of-Sale-Application",
+    codeTone: "forest",
+  },
+  {
+    id: "project-seven",
+    title: "GeoNames",
+    description:
+      "Team-built Python suite for exploring baby-name CSV data: menus, validation, and pandas-driven counts for Australia and California datasets.",
+    tags: ["Python", "Pandas", "CSV"],
+    codeSnippet: `#!/usr/bin/env python3
+# Libraries
+import pandas as pd
+
+def userSelectionHowManyNames():
+
+    locationChoices = ['a', 'A', 'c', 'C']
+    genderChoices = ['m', 'M', 'f', 'F']
+
+    print("\\t[ENTER INPUT]: Enter a or A for Australia, c or C for California: ", end = ' ')
+    locationChoice = input()
+    while locationChoice not in locationChoices:
+        print("\\t[ERROR]: Invalid choice, Enter a or A for Australia, c or C for California: ", end = ' ')
+        locationChoice = input()
+
+    print("\\t[ENTER INPUT]: Enter m or M for Male, f or F for Female: ", end = ' ')
+    genderChoice = input()
+    while genderChoice not in genderChoices:
+        print("\\t[ERROR]: Invalid choice, Enter m or M for Male, f or F for Female: ", end = ' ')
+        genderChoice = input()
+
+    if locationChoice == 'a' or locationChoice == "A":
+        austrliaHowMany(genderChoice)
+    if locationChoice == 'c' or locationChoice == 'C':
+        californiaHowMany(genderChoice)
+
+
+def austrliaHowMany(genderChoice):
+
+    if(genderChoice == "m" or genderChoice == "M"):
+        df = pd.read_csv("sortedFiles/sortedMaleAus.csv")
+        count = df['Name'].count()
+        print("\\t[OUTPUT]: There are", count, "non-unique Australian Male names.")`,
+    language: "python",
+    link: "https://github.com/Bchappel/GeoNames",
+    codeTone: "amber",
+  },
+  {
+    id: "project-eight",
+    title: "Employee Manager",
+    description:
+      "C CLI for managing an employee linked list: recruit, lookup, print, sort, and count—compiled with a makefile-driven workflow.",
+    tags: ["C", "Makefile", "Linked List"],
+    codeSnippet: `#include "../include/headerA3.h"
+
+// Function 6: Counts the total number of employees
+int countEmployees (a3Emp * headLL){
+
+    int count = 0;
+    a3Emp *tempNode = headLL;
+    while(tempNode != NULL) {
+        tempNode = tempNode->nextEmployee;
+        count++;
     }
-    
-    private void loadWorkouts() {
-        workoutList.clear();
-        workoutList.addAll(dbHelper.getAllWorkouts());
-    }
+    return count;
 }`,
-    language: "java",
-    link: "/projects/project-six",
+    language: "c",
+    link: "https://github.com/Bchappel/Employee-Manager",
+    codeTone: "slate",
   },
 ]

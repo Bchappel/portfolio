@@ -3,7 +3,6 @@
 import { Suspense } from "react";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
-import Image from "next/image";
 import { useSearchParams, useRouter, usePathname } from "next/navigation";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 
@@ -77,29 +76,27 @@ function S25ReportContent() {
 					presenting data clearly and responsively to match user expectations.
 				</p>
 
-				{/* Screenshots */}
-				<div className="grid grid-cols-2 gap-4 my-4">
-					<figure className="bg-stone-50 border border-stone-200 rounded-md p-2">
-						<Image
-							src="/images/CompanyLocation.jpg"
-							alt="Company Office"
-							width={600}
-							height={350}
-							className="rounded"
-						/>
-						<figcaption className="text-sm text-stone-600 mt-1">
+				{/* Photo placeholders — add images to the repo if you want figures here again */}
+				<div className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-4 not-prose">
+					<figure className="bg-stone-100 border border-stone-200 rounded-md overflow-hidden">
+						<div
+							className="aspect-[600/350] flex items-center justify-center text-stone-500 text-sm px-4 text-center"
+							aria-hidden
+						>
+							Company office photo (optional)
+						</div>
+						<figcaption className="text-sm text-stone-600 p-2 border-t border-stone-200 bg-stone-50">
 							Company Office.
 						</figcaption>
 					</figure>
-					<figure className="bg-stone-50 border border-stone-200 rounded-md p-2">
-						<Image
-							src="/images/CompanyRoom.jpg"
-							alt="Company Break Room"
-							width={600}
-							height={350}
-							className="rounded"
-						/>
-						<figcaption className="text-sm text-stone-600 mt-1">
+					<figure className="bg-stone-100 border border-stone-200 rounded-md overflow-hidden">
+						<div
+							className="aspect-[600/350] flex items-center justify-center text-stone-500 text-sm px-4 text-center"
+							aria-hidden
+						>
+							Break room photo (optional)
+						</div>
+						<figcaption className="text-sm text-stone-600 p-2 border-t border-stone-200 bg-stone-50">
 							Company Break Room.
 						</figcaption>
 					</figure>
@@ -206,27 +203,28 @@ function F25ReportContent() {
 					and evaluation process ensures the work remains valuable for future iterations.
 				</p>
 
-				{/* Screenshots */}
-				<div className="grid grid-cols-2 gap-4 my-4">
-					<figure className="bg-stone-50 border border-stone-200 rounded-md p-2">
-						<Image
-							src="/images/CompanyLocation.jpg"
-							alt="Company Office"
-							width={600}
-							height={350}
-							className="rounded"
-						/>
-						<figcaption className="text-sm text-stone-600 mt-1">Company Office.</figcaption>
+				<div className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-4 not-prose">
+					<figure className="bg-stone-100 border border-stone-200 rounded-md overflow-hidden">
+						<div
+							className="aspect-[600/350] flex items-center justify-center text-stone-500 text-sm px-4 text-center"
+							aria-hidden
+						>
+							Company office photo (optional)
+						</div>
+						<figcaption className="text-sm text-stone-600 p-2 border-t border-stone-200 bg-stone-50">
+							Company Office.
+						</figcaption>
 					</figure>
-					<figure className="bg-stone-50 border border-stone-200 rounded-md p-2">
-						<Image
-							src="/images/CompanyRoom.jpg"
-							alt="Company Break Room"
-							width={600}
-							height={350}
-							className="rounded"
-						/>
-						<figcaption className="text-sm text-stone-600 mt-1">Company Break Room.</figcaption>
+					<figure className="bg-stone-100 border border-stone-200 rounded-md overflow-hidden">
+						<div
+							className="aspect-[600/350] flex items-center justify-center text-stone-500 text-sm px-4 text-center"
+							aria-hidden
+						>
+							Break room photo (optional)
+						</div>
+						<figcaption className="text-sm text-stone-600 p-2 border-t border-stone-200 bg-stone-50">
+							Company Break Room.
+						</figcaption>
 					</figure>
 				</div>
 

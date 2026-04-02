@@ -21,7 +21,11 @@ export default function RootLayout({
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap"
         />
-        <link rel="icon" href="/BC.png" type="image/x-icon" />
+        <link
+          rel="icon"
+          href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23292524'/%3E%3Ctext x='16' y='22' text-anchor='middle' fill='white' font-size='13' font-family='system-ui,sans-serif' font-weight='600'%3EBC%3C/text%3E%3C/svg%3E"
+          type="image/svg+xml"
+        />
       </head>
       <body className="min-h-screen font-sf-pro antialiased">
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>

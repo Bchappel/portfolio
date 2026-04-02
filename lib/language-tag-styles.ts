@@ -94,6 +94,10 @@ export function getLanguageColorClass(lang: string): string {
     return "bg-yellow-100 text-yellow-800 border-yellow-400"
   }
 
+  if (normalizedLang.includes("pandas")) {
+    return "bg-lime-100 text-lime-900 border-lime-400"
+  }
+
   if (normalizedLang === "java" || normalizedLang.includes("spring")) {
     return "bg-red-100 text-red-800 border-red-200"
   }
@@ -174,6 +178,22 @@ export function getLanguageColorClass(lang: string): string {
 
   if (normalizedLang.includes("flutter")) {
     return "bg-sky-100 text-sky-800 border-sky-300"
+  }
+
+  if (normalizedLang.includes("swiftui")) {
+    return "bg-rose-100 text-rose-900 border-rose-300"
+  }
+
+  if (normalizedLang.includes("healthkit")) {
+    return "bg-pink-100 text-pink-900 border-pink-300"
+  }
+
+  if (normalizedLang.includes("xcode")) {
+    return "bg-sky-100 text-sky-900 border-sky-400"
+  }
+
+  if (normalizedLang.includes("winforms")) {
+    return "bg-slate-200 text-slate-900 border-slate-400"
   }
 
   if (normalizedLang.includes("swift")) {

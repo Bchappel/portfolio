@@ -193,6 +193,93 @@ function processCardCppLine(line: string, container: HTMLElement): void {
   })
 }
 
+const CARD_SWIFT_KEYWORDS = new Set([
+  "import", "struct", "class", "enum", "protocol", "extension", "let", "var", "func", "return", "if", "else",
+  "switch", "case", "default", "break", "continue", "for", "in", "while", "guard", "defer", "try", "catch",
+  "throw", "throws", "async", "await", "some", "where", "init", "self", "Self", "nil", "true", "false",
+  "private", "public", "internal", "fileprivate", "open", "static", "mutating", "override", "convenience",
+])
+
+const CARD_SWIFT_TYPES = new Set([
+  "View", "String", "Int", "Double", "Float", "Bool", "Color", "Text", "Image", "HStack", "VStack", "ZStack",
+  "Spacer", "ForEach", "Binding", "State", "ObservableObject", "Published",
+])
+
+function processCardSwiftLine(line: string, container: HTMLElement): void {
+  const t = line.trim()
+  if (t.startsWith("//")) {
+    container.appendChild(cardColoredSpan(line, "text-gray-500"))
+    return
+  }
+
+  const regex = /(\s+|".*?"|\w+\(|\w+|==|!=|\.|::|[^\s\w])/g
+  const tokens = line.match(regex) || []
+
+  tokens.forEach((token) => {
+    if (/^\s+$/.test(token)) {
+      container.appendChild(document.createTextNode(token))
+    } else if (CARD_SWIFT_KEYWORDS.has(token)) {
+      container.appendChild(cardColoredSpan(token, "text-fuchsia-400"))
+    } else if (CARD_SWIFT_TYPES.has(token)) {
+      container.appendChild(cardColoredSpan(token, "text-cyan-300"))
+    } else if (/^\w+\($/.test(token)) {
+      container.appendChild(cardColoredSpan(token.slice(0, -1), "text-amber-300"))
+      container.appendChild(cardColoredSpan("(", "text-gray-100"))
+    } else if (/^".*"$/.test(token)) {
+      container.appendChild(cardColoredSpan(token, "text-green-400"))
+    } else if (/^\d+(\.\d+)?$/.test(token)) {
+      container.appendChild(cardColoredSpan(token, "text-orange-300"))
+    } else if (["==", "!=", "=", ".", ":", ",", "->"].includes(token)) {
+      container.appendChild(cardColoredSpan(token, "text-sky-400"))
+    } else {
+      container.appendChild(cardColoredSpan(token, "text-gray-100"))
+    }
+  })
+}
+
+const CARD_VB_KEYWORDS = new Set([
+  "Public", "Private", "Protected", "Friend", "Dim", "As", "Class", "Module", "End", "Sub", "Function",
+  "If", "Then", "Else", "ElseIf", "Select", "Case", "While", "For", "Each", "Next", "To", "Step", "Handles",
+  "And", "Or", "Not", "Xor", "New", "Me", "MyBase", "MyClass", "True", "False", "Nothing", "Is", "IsNot",
+  "ByVal", "ByRef", "Optional", "ParamArray", "Return", "Try", "Catch", "Finally", "Throw",
+])
+
+const CARD_VB_TYPES = new Set([
+  "Decimal", "Double", "Single", "Integer", "Long", "Short", "Byte", "Boolean", "String", "Char", "Object", "Date",
+])
+
+function processCardVbLine(line: string, container: HTMLElement): void {
+  const trimmed = line.trimStart()
+  if (trimmed.startsWith("'")) {
+    container.appendChild(cardColoredSpan(line, "text-gray-500"))
+    return
+  }
+
+  const regex = /(\s+|".*?"|\w+\(|\w+|==|\.|&|[^\s\w])/g
+  const tokens = line.match(regex) || []
+
+  tokens.forEach((token) => {
+    if (/^\s+$/.test(token)) {
+      container.appendChild(document.createTextNode(token))
+    } else if (CARD_VB_KEYWORDS.has(token)) {
+      container.appendChild(cardColoredSpan(token, "text-blue-300"))
+    } else if (CARD_VB_TYPES.has(token)) {
+      container.appendChild(cardColoredSpan(token, "text-teal-300"))
+    } else if (/^\w+\($/.test(token)) {
+      container.appendChild(cardColoredSpan(token.slice(0, -1), "text-yellow-300"))
+      container.appendChild(cardColoredSpan("(", "text-gray-100"))
+    } else if (/^".*"$/.test(token)) {
+      container.appendChild(cardColoredSpan(token, "text-amber-200"))
+    } else if (/^\d+(\.\d+)?$/.test(token)) {
+      container.appendChild(cardColoredSpan(token, "text-orange-300"))
+    } else if (["=", "+", "-", "*", "/", "&", "."].includes(token)) {
+      container.appendChild(cardColoredSpan(token, "text-sky-400"))
+    } else {
+      container.appendChild(cardColoredSpan(token, "text-gray-100"))
+    }
+  })
+}
+
 function processCardJavaLine(line: string, container: HTMLElement): void {
   if (line.trim().startsWith("//")) {
     container.appendChild(cardColoredSpan(line, "text-gray-500"))
@@ -265,6 +352,10 @@ function appendLineCard(
     processCardJavaLine(line, lineDiv)
   } else if (language === "csharp" || language === "c#") {
     processCardCSharpLine(line, lineDiv)
+  } else if (language === "swift") {
+    processCardSwiftLine(line, lineDiv)
+  } else if (language === "vb" || language === "vb.net" || language === "vbnet") {
+    processCardVbLine(line, lineDiv)
   } else {
     const textSpan = document.createElement("span")
     textSpan.className = "text-gray-100"

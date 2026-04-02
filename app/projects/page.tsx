@@ -27,6 +27,7 @@ export default function ProjectsPage() {
                 codeSnippet={project.codeSnippet}
                 language={project.language}
                 link={project.link}
+                codeTone={project.codeTone}
               />
             ))}
           </div>
