@@ -73,11 +73,6 @@ phylib_object * phylib_new_still_ball(unsigned char number, phylib_coord * pos){
     language: "java",
     link: "https://github.com/Bchappel/ToDo-List-Application",
   },
-]
-
-// All projects shown on the projects page
-export const allProjects: ProjectData[] = [
-  ...featuredProjects,
   {
     id: "project-three",
     title: "Unity Pong Game",
@@ -142,6 +137,11 @@ struct HealthRowView: View {
     link: "https://github.com/Bchappel/HealthDashboard",
     codeTone: "sapphire",
   },
+]
+
+// All projects shown on the projects page
+export const allProjects: ProjectData[] = [
+  ...featuredProjects,
   {
     id: "project-five",
     title: "Planner Web Application",

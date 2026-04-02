@@ -65,22 +65,43 @@ export default function ResumePage() {
                 <div>
                   <div className="mb-1">
                     <h3 className="font-medium text-lg">Software Engineering Intern</h3>
-                    <span className="text-stone-500 block">September 2024 - Present</span>
                   </div>
-                  <div className="text-stone-600 mb-2">Adknown Inc.</div>
-                  <ul className="space-y-2 text-stone-600">
+                  <div className="mb-2 flex flex-wrap items-baseline gap-x-2 text-stone-600">
+                    <span>CoShopper (Subsidiary of Adknown Inc.)</span>
+                    <span className="text-stone-500">March 2026 – Present</span>
+                  </div>
+                  <ul className="space-y-2 pl-8 text-stone-600">
                     <li className="flex items-start">
-                      {/* Updated bullet point style */}
-                      <span className="inline-block w-1.5 h-1.5 rounded-full bg-stone-500 mt-[0.65em] mr-2 flex-shrink-0"></span>
-                      <span>Designed and developed a website for household products using the Laravel MVC (Model-View-Controller) framework, integrated PHP, Tailwind CSS, and JavaScript (Alpine.js) into blade (HTML) templates.</span>
+                      <span
+                        className="mt-[0.65em] mr-2 inline-block size-1.5 shrink-0 rounded-none bg-stone-500"
+                        aria-hidden
+                      />
+                      <span>
+                        Designed and evaluated multiple proof-of-concept recommendation architectures, comparing
+                        embedding providers, similarity metrics, and retrieval strategies to assess recommendation quality
+                        without supervised training data.
+                      </span>
                     </li>
                     <li className="flex items-start">
-                      <span className="inline-block w-1.5 h-1.5 rounded-full bg-stone-500 mt-[0.65em] mr-2 flex-shrink-0"></span>
-                      <span>Configured staging and production environments leveraging AWS services, including EC2, Elastic Beanstalk, CloudFront, and S3, to ensure scalability and load balancing as well as configuring CD/CI pipelines and deployment.</span>
+                      <span
+                        className="mt-[0.65em] mr-2 inline-block size-1.5 shrink-0 rounded-none bg-stone-500"
+                        aria-hidden
+                      />
+                      <span>
+                        Built and deployed vector indexing and ANN search pipelines in AWS OpenSearch (HNSW), enabling
+                        low-latency semantic retrieval over large product catalogs with deduplicated variants.
+                      </span>
                     </li>
                     <li className="flex items-start">
-                      <span className="inline-block w-1.5 h-1.5 rounded-full bg-stone-500 mt-[0.65em] mr-2 flex-shrink-0"></span>
-                      <span>Engineered optimized MySQL database schemas using Laravel's Eloquent ORM (Object Relational Mapper) for products and brands to enhance query performance and streamline site data access.</span>
+                      <span
+                        className="mt-[0.65em] mr-2 inline-block size-1.5 shrink-0 rounded-none bg-stone-500"
+                        aria-hidden
+                      />
+                      <span>
+                        Implemented and benchmarked ML-based recommendation models using NVIDIA Merlin, exploring
+                        embedding-based user–item representations, feature engineering workflows, and GPU-accelerated
+                        training at scale.
+                      </span>
                     </li>
                   </ul>
                 </div>
@@ -88,21 +109,109 @@ export default function ResumePage() {
                 <div>
                   <div className="mb-1">
                     <h3 className="font-medium text-lg">Software Engineering Intern</h3>
-                    <span className="text-stone-500 block">April 2023 - September 2023</span>
                   </div>
-                  <div className="text-stone-600 mb-2">NovaTox Inc.</div>
-                  <ul className="space-y-2 text-stone-600">
+                  <div className="mb-2 flex flex-wrap items-baseline gap-x-2 text-stone-600">
+                    <span>Adknown Inc.</span>
+                    <span className="text-stone-500">September 2024 – March 2026</span>
+                  </div>
+                  <ul className="space-y-2 pl-8 text-stone-600">
                     <li className="flex items-start">
-                      <span className="inline-block w-1.5 h-1.5 rounded-full bg-stone-500 mt-[0.65em] mr-2 flex-shrink-0"></span>
-                      <span>Contributed to developing and documenting an extensive in-house API and software suite using Java to model equations pertinent for conducting environmental risk assessments.</span>
+                      <span
+                        className="mt-[0.65em] mr-2 inline-block size-1.5 shrink-0 rounded-none bg-stone-500"
+                        aria-hidden
+                      />
+                      <span>
+                        Designed and developed an ecommerce comparison and review aggregation platform using the Laravel
+                        MVC framework by integrating PHP, Tailwind CSS, and Alpine.js into modular Blade templates for
+                        responsive, performant front-end delivery.
+                      </span>
                     </li>
                     <li className="flex items-start">
-                      <span className="inline-block w-1.5 h-1.5 rounded-full bg-stone-500 mt-[0.65em] mr-2 flex-shrink-0"></span>
-                      <span>Engaged in Agile methodologies by participating in sprints and stand-ups to meet project objectives within deadlines.</span>
+                      <span
+                        className="mt-[0.65em] mr-2 inline-block size-1.5 shrink-0 rounded-none bg-stone-500"
+                        aria-hidden
+                      />
+                      <span>
+                        Architected and configured AWS infrastructure such as EC2, Elastic Beanstalk, CloudFront, and S3
+                        environments, and implemented Bitbucket CI/CD pipelines for seamless deployment, scalability,
+                        and versioned staging/production parity.
+                      </span>
                     </li>
                     <li className="flex items-start">
-                      <span className="inline-block w-1.5 h-1.5 rounded-full bg-stone-500 mt-[0.65em] mr-2 flex-shrink-0"></span>
-                      <span>Contributed to code reviews, comprehensive unit and integration testing employing JUnit to ensure reliable function.</span>
+                      <span
+                        className="mt-[0.65em] mr-2 inline-block size-1.5 shrink-0 rounded-none bg-stone-500"
+                        aria-hidden
+                      />
+                      <span>
+                        Optimized MySQL database schemas for product and brand data, applying indexing, eager loading,
+                        and Laravel Eloquent ORM design patterns to significantly improve query performance and API
+                        responsiveness.
+                      </span>
+                    </li>
+                    <li className="flex items-start">
+                      <span
+                        className="mt-[0.65em] mr-2 inline-block size-1.5 shrink-0 rounded-none bg-stone-500"
+                        aria-hidden
+                      />
+                      <span>
+                        Developed and maintained AWS Lambda services for data extraction, scheduled sync tasks, and
+                        image-processing jobs; designed an internal scheduling framework to coordinate Lambda executions
+                        and maintain data consistency.
+                      </span>
+                    </li>
+                    <li className="flex items-start">
+                      <span
+                        className="mt-[0.65em] mr-2 inline-block size-1.5 shrink-0 rounded-none bg-stone-500"
+                        aria-hidden
+                      />
+                      <span>
+                        Built a custom API layer powering dynamic product comparison, search filters, and a real-time
+                        recommendation engine; implemented front-end interactivity entirely within Alpine.js for a
+                        lightweight and reactive UX.
+                      </span>
+                    </li>
+                    <li className="flex items-start">
+                      <span
+                        className="mt-[0.65em] mr-2 inline-block size-1.5 shrink-0 rounded-none bg-stone-500"
+                        aria-hidden
+                      />
+                      <span>
+                        Created an onsite AI chatbot interface integrated with AWS Bedrock and LangChain, enabling
+                        natural-language product queries via a Neptune-backed RDF graph and SPARQL retrieval, including
+                        custom frontend widget design and API integration.
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div>
+                  <div className="mb-1">
+                    <h3 className="font-medium text-lg">Software Engineering Intern</h3>
+                  </div>
+                  <div className="mb-2 flex flex-wrap items-baseline gap-x-2 text-stone-600">
+                    <span>NovaTox Inc.</span>
+                    <span className="text-stone-500">April 2023 – September 2023</span>
+                  </div>
+                  <ul className="space-y-2 pl-8 text-stone-600">
+                    <li className="flex items-start">
+                      <span
+                        className="mt-[0.65em] mr-2 inline-block size-1.5 shrink-0 rounded-none bg-stone-500"
+                        aria-hidden
+                      />
+                      <span>
+                        Assisted in designing and documenting a robust Java-based API and software system for modeling
+                        equations used in environmental risk assessments.
+                      </span>
+                    </li>
+                    <li className="flex items-start">
+                      <span
+                        className="mt-[0.65em] mr-2 inline-block size-1.5 shrink-0 rounded-none bg-stone-500"
+                        aria-hidden
+                      />
+                      <span>
+                        Contributed to code reviews, unit and integration testing employing JUnit to ensure reliable
+                        function.
+                      </span>
                     </li>
                   </ul>
                 </div>
@@ -119,17 +228,29 @@ export default function ResumePage() {
                   <span className="text-stone-500 block">2022 - Present</span>
                 </div>
                 <div className="text-stone-600">University of Guelph</div>
-                <ul className="mt-2 space-y-2 text-stone-600">
+                <ul className="mt-2 space-y-2 pl-8 text-stone-600">
                   <li className="flex items-start">
-                    <span className="inline-block w-1.5 h-1.5 rounded-full bg-stone-500 mt-[0.65em] mr-2 flex-shrink-0"></span>
+                    <span
+                      className="mt-[0.65em] mr-2 inline-block size-1.5 shrink-0 rounded-none bg-stone-500"
+                      aria-hidden
+                    />
                     <span>Minoring in Project Management.</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="inline-block w-1.5 h-1.5 rounded-full bg-stone-500 mt-[0.65em] mr-2 flex-shrink-0"></span>
-                    <span>Relevant coursework: Data Structures, Algorithms, Web Development, Mobile Development, Micro Computing.</span>
+                    <span
+                      className="mt-[0.65em] mr-2 inline-block size-1.5 shrink-0 rounded-none bg-stone-500"
+                      aria-hidden
+                    />
+                    <span>
+                      Relevant coursework: Data Structures, Algorithms, Web Development, Mobile Development, Micro
+                      Computing.
+                    </span>
                   </li>
                   <li className="flex items-start">
-                    <span className="inline-block w-1.5 h-1.5 rounded-full bg-stone-500 mt-[0.65em] mr-2 flex-shrink-0"></span>
+                    <span
+                      className="mt-[0.65em] mr-2 inline-block size-1.5 shrink-0 rounded-none bg-stone-500"
+                      aria-hidden
+                    />
                     <span>College of Engineering & Physical Sciences Dean's Honours List.</span>
                   </li>
                 </ul>

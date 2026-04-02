@@ -83,7 +83,7 @@ export default function HomePage() {
         <section className="py-16 bg-stone-100">
           <div className="container mx-auto px-4">
             <h2 className="text-2xl md:text-3xl font-bold mb-12 text-center">Featured Projects</h2>
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-5xl mx-auto">
               {featuredProjects.map((project) => (
                 <div key={project.id} className="bg-white rounded-lg overflow-hidden shadow-sm border border-stone-200">
                   <div className="h-[220px] overflow-hidden bg-[#0d1117] p-4 font-jetbrains text-sm">

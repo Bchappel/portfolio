@@ -670,6 +670,8 @@ function appendLineSimple(
     processSimpleJavaLine(line, lineDiv)
   } else if (language === "csharp" || language === "c#") {
     processSimpleCSharpLine(line, lineDiv)
+  } else if (language === "swift") {
+    processCardSwiftLine(line, lineDiv)
   } else {
     const textSpan = document.createElement("span")
     textSpan.className = "text-gray-100"
