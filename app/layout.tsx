@@ -54,6 +54,9 @@ export const metadata: Metadata = {
     description: SITE_DESCRIPTION,
   },
   category: "portfolio",
+  verification: {
+    google: "6IRzr0VGmyfER_RjX4I6N0ocFzoUAw7bKBBNXJIl_MY",
+  },
 }
 
 const jsonLd = {
