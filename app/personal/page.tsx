@@ -1,6 +1,14 @@
+import type { Metadata } from "next"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { TravelMapDynamic } from "@/components/travel-map-dynamic"
+
+export const metadata: Metadata = {
+  title: "About",
+  description:
+    "About Braedan Chappel, an undergraduate Software Engineering student at the University of Guelph focused on reliable, maintainable software.",
+  alternates: { canonical: "/personal" },
+}
 
 export default function PersonalPage() {
   return (

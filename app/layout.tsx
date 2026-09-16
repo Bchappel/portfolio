@@ -1,20 +1,103 @@
-import type React from "react"
+import type { Metadata } from "next"
+import type { ReactNode } from "react"
 import "@/app/globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
+import {
+  PERSON_SAME_AS,
+  SITE_DESCRIPTION,
+  SITE_JOB_TITLE,
+  SITE_NAME,
+  SITE_URL,
+} from "@/lib/site"
 
-export const metadata = {
-  title: "Braedan Chappel",
-  description: "Personal portfolio showcasing projects, resume, and more",
-    generator: 'v0.dev'
+export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: `${SITE_NAME} | ${SITE_JOB_TITLE}`,
+    template: `%s | ${SITE_NAME}`,
+  },
+  description: SITE_DESCRIPTION,
+  applicationName: SITE_NAME,
+  authors: [{ name: SITE_NAME, url: SITE_URL }],
+  creator: SITE_NAME,
+  publisher: SITE_NAME,
+  keywords: [
+    "Braedan Chappel",
+    "software engineer",
+    "University of Guelph",
+    "portfolio",
+    "full-stack developer",
+    "Guelph Ontario",
+  ],
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_CA",
+    url: SITE_URL,
+    siteName: SITE_NAME,
+    title: `${SITE_NAME} | ${SITE_JOB_TITLE}`,
+    description: SITE_DESCRIPTION,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${SITE_NAME} | ${SITE_JOB_TITLE}`,
+    description: SITE_DESCRIPTION,
+  },
+  category: "portfolio",
+}
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      name: SITE_NAME,
+      url: SITE_URL,
+      description: SITE_DESCRIPTION,
+      inLanguage: "en-CA",
+      publisher: { "@id": `${SITE_URL}/#person` },
+    },
+    {
+      "@type": "Person",
+      "@id": `${SITE_URL}/#person`,
+      name: SITE_NAME,
+      url: SITE_URL,
+      email: "braedanchappel@gmail.com",
+      jobTitle: SITE_JOB_TITLE,
+      description: SITE_DESCRIPTION,
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Guelph",
+        addressRegion: "ON",
+        addressCountry: "CA",
+      },
+      alumniOf: {
+        "@type": "CollegeOrUniversity",
+        name: "University of Guelph",
+      },
+      sameAs: [...PERSON_SAME_AS],
+    },
+  ],
 }
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: ReactNode
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en-CA" suppressHydrationWarning>
       <head>
         <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/sf-pro-display" />
         <link
@@ -28,6 +111,10 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-screen font-sf-pro antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
           {children}
         </ThemeProvider>

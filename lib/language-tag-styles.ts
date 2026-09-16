@@ -90,8 +90,40 @@ export function getLanguageColorClass(lang: string): string {
     return "bg-green-100 text-green-800 border-green-200"
   }
 
+  if (normalizedLang.includes("fastapi")) {
+    return "bg-teal-100 text-teal-800 border-teal-300"
+  }
+
   if (normalizedLang === "python" || normalizedLang.includes("django") || normalizedLang.includes("flask")) {
     return "bg-yellow-100 text-yellow-800 border-yellow-400"
+  }
+
+  if (normalizedLang.includes("scrapy")) {
+    return "bg-green-100 text-green-800 border-green-300"
+  }
+
+  if (normalizedLang.includes("alpine")) {
+    return "bg-teal-100 text-teal-900 border-teal-300"
+  }
+
+  if (normalizedLang.includes("opensearch")) {
+    return "bg-blue-100 text-blue-900 border-blue-300"
+  }
+
+  if (normalizedLang.includes("openai")) {
+    return "bg-emerald-100 text-emerald-800 border-emerald-300"
+  }
+
+  if (normalizedLang.includes("anthropic") || normalizedLang.includes("claude")) {
+    return "bg-orange-100 text-orange-800 border-orange-300"
+  }
+
+  if (normalizedLang.includes("langchain")) {
+    return "bg-green-100 text-green-900 border-green-300"
+  }
+
+  if (normalizedLang.includes("pytest")) {
+    return "bg-sky-100 text-sky-900 border-sky-300"
   }
 
   if (normalizedLang.includes("pandas")) {

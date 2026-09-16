@@ -33,6 +33,11 @@ const frameworksAndTools = [
   "Node.js",
   "Unity",
   "GNU CC",
+  "Docker",
+  "FastAPI",
+  "Flask",
+  "Tailwind CSS",
+  "OpenAI",
 ] as const
 
 const projectManagementSkills = [
@@ -77,9 +82,52 @@ export default function ResumePage() {
                         aria-hidden
                       />
                       <span>
+                        Designed and implemented a natural-language product search and comparison system using Python
+                        and FastAPI, integrating large language models to interpret shopper queries, retrieve matching
+                        catalog items, and generate source-grounded answers for single- and multi-product questions.
+                      </span>
+                    </li>
+                    <li className="flex items-start">
+                      <span
+                        className="mt-[0.65em] mr-2 inline-block size-1.5 shrink-0 rounded-none bg-stone-500"
+                        aria-hidden
+                      />
+                      <span>
+                        Architected web-extraction and catalog-ingestion pipelines that collect product data from
+                        manufacturer and retailer websites, applying marketplace isolation so third-party listings
+                        cannot contaminate first-party brand records.
+                      </span>
+                    </li>
+                    <li className="flex items-start">
+                      <span
+                        className="mt-[0.65em] mr-2 inline-block size-1.5 shrink-0 rounded-none bg-stone-500"
+                        aria-hidden
+                      />
+                      <span>
+                        Implemented source-of-truth tracking for product specifications by archiving original pages,
+                        manuals, and snapshots, and extended enrichment workflows to score listings, ingest retailer
+                        reviews, and generate customer-sentiment summaries for live comparison sites.
+                      </span>
+                    </li>
+                    <li className="flex items-start">
+                      <span
+                        className="mt-[0.65em] mr-2 inline-block size-1.5 shrink-0 rounded-none bg-stone-500"
+                        aria-hidden
+                      />
+                      <span>
+                        Designed an internal cost-observability console attributing AI and scraping spend across
+                        production pipelines, with alerting on usage spikes to keep cloud operations predictable.
+                      </span>
+                    </li>
+                    <li className="flex items-start">
+                      <span
+                        className="mt-[0.65em] mr-2 inline-block size-1.5 shrink-0 rounded-none bg-stone-500"
+                        aria-hidden
+                      />
+                      <span>
                         Designed and evaluated multiple proof-of-concept recommendation architectures, comparing
-                        embedding providers, similarity metrics, and retrieval strategies to assess recommendation quality
-                        without supervised training data.
+                        embedding providers, similarity metrics, and retrieval strategies to assess recommendation
+                        quality without supervised training data.
                       </span>
                     </li>
                     <li className="flex items-start">

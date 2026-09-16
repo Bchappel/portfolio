@@ -1,15 +1,9 @@
 "use client"
 
-import { useState, useEffect } from "react"
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 export default function WelcomePage() {
-  const [loaded, setLoaded] = useState(false)
-
-  useEffect(() => {
-    setLoaded(true)
-  }, [])
 
   // Function to handle the explore button click
   const handleExplore = () => {
@@ -19,13 +13,12 @@ export default function WelcomePage() {
 
   return (
     <div className="min-h-screen bg-white flex flex-col items-center justify-center px-4 relative overflow-hidden">
-      <div
-        className={`text-center transition-all duration-700 ease-out z-10 ${
-          loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-        }`}
-      >
+      <div className="text-center z-10">
         <h1 className="text-5xl md:text-7xl font-bold tracking-tighter mb-6 text-stone-800">Braedan Chappel</h1>
-        <p className="text-xl md:text-2xl text-stone-600 mb-12 max-w-md mx-auto">Software Engineer.</p>
+        <p className="text-xl md:text-2xl text-stone-600 mb-3 max-w-md mx-auto">Software Engineer.</p>
+        <p className="text-base md:text-lg text-stone-500 mb-12 max-w-md mx-auto">
+          University of Guelph · Guelph, Ontario
+        </p>
         <div className="relative inline-block">
           <Button
             asChild

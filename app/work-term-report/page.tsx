@@ -6,6 +6,33 @@ import { Footer } from "@/components/footer";
 import { useSearchParams, useRouter, usePathname } from "next/navigation";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 
+function CompanyPhotos() {
+	return (
+		<div className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-4 not-prose">
+			<figure className="bg-stone-50 border border-stone-200 rounded-md p-2">
+				<img
+					src="/images/CompanyLocation.jpg"
+					alt="Company Office"
+					width={600}
+					height={350}
+					className="rounded w-full h-auto"
+				/>
+				<figcaption className="text-sm text-stone-600 mt-1">Company Office.</figcaption>
+			</figure>
+			<figure className="bg-stone-50 border border-stone-200 rounded-md p-2">
+				<img
+					src="/images/CompanyRoom.jpg"
+					alt="Company Break Room"
+					width={600}
+					height={350}
+					className="rounded w-full h-auto"
+				/>
+				<figcaption className="text-sm text-stone-600 mt-1">Company Break Room.</figcaption>
+			</figure>
+		</div>
+	);
+}
+
 // Separate S25 report content
 function S25ReportContent() {
 	return (
@@ -76,31 +103,7 @@ function S25ReportContent() {
 					presenting data clearly and responsively to match user expectations.
 				</p>
 
-				{/* Photo placeholders — add images to the repo if you want figures here again */}
-				<div className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-4 not-prose">
-					<figure className="bg-stone-100 border border-stone-200 rounded-md overflow-hidden">
-						<div
-							className="aspect-[600/350] flex items-center justify-center text-stone-500 text-sm px-4 text-center"
-							aria-hidden
-						>
-							Company office photo (optional)
-						</div>
-						<figcaption className="text-sm text-stone-600 p-2 border-t border-stone-200 bg-stone-50">
-							Company Office.
-						</figcaption>
-					</figure>
-					<figure className="bg-stone-100 border border-stone-200 rounded-md overflow-hidden">
-						<div
-							className="aspect-[600/350] flex items-center justify-center text-stone-500 text-sm px-4 text-center"
-							aria-hidden
-						>
-							Break room photo (optional)
-						</div>
-						<figcaption className="text-sm text-stone-600 p-2 border-t border-stone-200 bg-stone-50">
-							Company Break Room.
-						</figcaption>
-					</figure>
-				</div>
+				<CompanyPhotos />
 
 				{/* Reflection */}
 				<h2>Reflection</h2>
@@ -203,30 +206,7 @@ function F25ReportContent() {
 					and evaluation process ensures the work remains valuable for future iterations.
 				</p>
 
-				<div className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-4 not-prose">
-					<figure className="bg-stone-100 border border-stone-200 rounded-md overflow-hidden">
-						<div
-							className="aspect-[600/350] flex items-center justify-center text-stone-500 text-sm px-4 text-center"
-							aria-hidden
-						>
-							Company office photo (optional)
-						</div>
-						<figcaption className="text-sm text-stone-600 p-2 border-t border-stone-200 bg-stone-50">
-							Company Office.
-						</figcaption>
-					</figure>
-					<figure className="bg-stone-100 border border-stone-200 rounded-md overflow-hidden">
-						<div
-							className="aspect-[600/350] flex items-center justify-center text-stone-500 text-sm px-4 text-center"
-							aria-hidden
-						>
-							Break room photo (optional)
-						</div>
-						<figcaption className="text-sm text-stone-600 p-2 border-t border-stone-200 bg-stone-50">
-							Company Break Room.
-						</figcaption>
-					</figure>
-				</div>
+				<CompanyPhotos />
 
 				{/* Reflection */}
 				<h2>Reflection</h2>
@@ -258,15 +238,136 @@ function F25ReportContent() {
 	);
 }
 
+// Separate S26 report content
+function S26ReportContent() {
+	return (
+		<>
+			{/* Header */}
+			<header className="mb-6">
+				<h1 className="text-3xl md:text-4xl font-bold">Work Term Report — S26</h1>
+				<p className="text-stone-600 mt-2">
+					A reflective summary of my CoShopper co-op term, highlighting my projects, goals, and learning.
+				</p>
+			</header>
+
+			{/* Article */}
+			<article
+				className={[
+					"prose prose-stone max-w-none bg-white p-6 md:p-8 rounded-lg shadow-sm border border-stone-200",
+					// Force document-style heading styles
+					"prose-headings:font-black prose-headings:text-gray-900",
+					"prose-h1:font-black prose-h1:text-gray-900 prose-h1:tracking-tight",
+					"prose-h2:font-extrabold prose-h2:text-gray-900 prose-h2:tracking-tight",
+					"prose-p:text-gray-700 prose-p:leading-relaxed",
+				].join(" ")}
+			>
+				{/* Introduction */}
+				<h2>Introduction</h2>
+				<p>
+					From <strong>May 2026 to September 2026</strong>, I worked as a Software Engineering Intern at{" "}
+					<strong>CoShopper</strong>, a subsidiary of Adknown Inc. in Guelph, Ontario. This term moved me
+					from earlier experimental work into production ownership across the product data stack. I
+					contributed to a query-understanding service, acquisition and extraction pipelines, enrichment
+					and scoring jobs, and an internal console for tracking LLM and scrape spend.
+				</p>
+
+				{/* Employer */}
+				<h2>About the Employer</h2>
+				<p>
+					CoShopper builds the data platform behind Adknown’s comparison-shopping sites. Engineering
+					work is organized around discovering brands, extracting structured product records, enriching
+					those records with reviews and scores, and serving the result to consumer sites. The team
+					treats pipelines as production systems: jobs have budgets, provenance requirements, and
+					operator tools. Working here taught me how research-style LLM features have to sit on top of
+					reliable extraction and clear cost controls before they are useful.
+				</p>
+
+				{/* Goals */}
+				<h2>Goals</h2>
+				<p>
+					My goals were to deepen production data-engineering skills, get more comfortable shipping
+					LLM-backed product features with measurable cost, and improve how I explain pipeline behavior
+					to other engineers. I also wanted to own work that crossed repository boundaries rather than
+					staying inside a single prototype. By the end of the term I had shipped changes in query
+					understanding, extraction, enrichment, and usage observability, and I had written the
+					operator notes needed for other people to run and review that work.
+				</p>
+
+				{/* Work Term Highlights */}
+				<h2>Work Term Highlights</h2>
+				<p>
+					Early in the term I worked on the <strong>Query Understanding Module (QUM)</strong>, a
+					four-step LLM pipeline that turns a shopper query into structured intent and slots. I added
+					catalog retrieval against a shared discovery read model, session-aware follow-up planning,
+					answer synthesis, and product comparison for multiple SKUs. Later I tightened source
+					provenance on comparison cards so claims could carry archive URLs and resolved source maps
+					instead of unverified text. That work connected natural-language queries to real catalog rows
+					without hiding where a fact came from.
+				</p>
+				<p>
+					On the data platform I spent most of the summer in{" "}
+					<strong>data-extraction-layer</strong> and <strong>data-enrichment-layer</strong>. I shipped a
+					Shopify storewide harvest, an Amazon marketplace persist path, and a third-party data lane,
+					then fenced marketplace records so they could not be treated as first-party extracts. I also
+					added sha-keyed PDF capture to S3, sidecar rendered HTML, and sampled browser snapshots so
+					extracted facts stayed auditable. In enrichment I worked on the extraction syncer, scoring
+					matrix and rubric promotion, batch feature-sentiment assignment, and review ingestion from
+					retailer sources including Bazaarvoice, Shopify-family stores, and SerpAPI Amazon search.
+				</p>
+				<p>
+					I also built and extended <strong>usage-ops</strong>, a Flask console over the{" "}
+					<code>pp_ops</code> spend tables. The goal was one place to see OpenAI, Anthropic, and scrape
+					cost instead of checking each pipeline separately. I split extraction and enrichment spend
+					into a single view, added billing-period alerts that latch instead of firing on every small
+					increase, and helped stand the console up as an office operator tool. That project made cost
+					a first-class part of shipping data jobs, not a follow-up after a run finished.
+				</p>
+
+				<CompanyPhotos />
+
+				{/* Reflection */}
+				<h2>Reflection</h2>
+				<p>
+					This term changed how I think about “done.” A harvest is not complete when URLs are collected;
+					it is complete when marketplace data cannot pollute first-party records, PDFs and HTML are
+					stored with provenance, and spend is visible in the same week the job ran. Moving between QUM,
+					extraction, and enrichment also showed me that LLM features fail quietly if the catalog
+					behind them is inconsistent. I got better at writing activation notes and operator docs so the
+					next person could rerun or review the work without reconstructing it from chat history.
+				</p>
+				<p>
+					Looking ahead, I want to get more systematic about evaluation for retrieval and scoring, and
+					to keep tightening the loop between pipeline changes and cost dashboards. I also want to keep
+					practicing the habit this term rewarded: ship the smallest complete path, then add fences,
+					provenance, and observability before expanding scope.
+				</p>
+
+				{/* Conclusion & Acknowledgments */}
+				<h2>Conclusion &amp; Acknowledgments</h2>
+				<p>
+					Overall, this work term strengthened my ability to own production data systems end-to-end, from
+					query understanding through extraction, enrichment, and spend tracking. I am grateful to my
+					supervisor and teammates at CoShopper and Adknown for the autonomy to take on cross-repo
+					problems and for the reviews that kept the work precise. The experience left me more confident
+					shipping LLM-backed product features that stay honest about cost, lineage, and operational
+					reality.
+				</p>
+			</article>
+		</>
+	);
+}
+
 // Component that uses useSearchParams - must be wrapped in Suspense
 function WorkTermReportTabs() {
 	const searchParams = useSearchParams();
 	const router = useRouter();
 	const pathname = usePathname();
-	
-	// Get the tab from URL, default to "s25"
-	const activeTab = searchParams.get("tab") || "s25";
-	const normalizedTab = activeTab.toLowerCase() === "f25" ? "f25" : "s25";
+
+	const allowedTabs = ["s25", "f25", "s26"] as const;
+	const activeTab = (searchParams.get("tab") || "s25").toLowerCase();
+	const normalizedTab = allowedTabs.includes(activeTab as (typeof allowedTabs)[number])
+		? activeTab
+		: "s25";
 
 	const handleTabChange = (value: string) => {
 		const params = new URLSearchParams(searchParams.toString());
@@ -279,6 +380,7 @@ function WorkTermReportTabs() {
 			<TabsList className="mb-6">
 				<TabsTrigger value="s25">S25</TabsTrigger>
 				<TabsTrigger value="f25">F25</TabsTrigger>
+				<TabsTrigger value="s26">S26</TabsTrigger>
 			</TabsList>
 
 			<TabsContent value="s25">
@@ -287,6 +389,10 @@ function WorkTermReportTabs() {
 
 			<TabsContent value="f25">
 				<F25ReportContent />
+			</TabsContent>
+
+			<TabsContent value="s26">
+				<S26ReportContent />
 			</TabsContent>
 		</Tabs>
 	);
